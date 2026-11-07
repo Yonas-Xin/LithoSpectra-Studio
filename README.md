@@ -10,6 +10,17 @@
 
 LithoSpectra 将地质样本、遥感影像、标准光谱与野外调查记录放在同一个工作空间，支持 macOS 与 Windows。界面使用 React、TypeScript 和 OpenLayers，由 pywebview 提供桌面窗口，FastAPI 与 GDAL 提供本地服务和地理数据处理。
 
+## 下载桌面版
+
+无需安装 Python 或 Node.js，可从 [GitHub Releases](https://github.com/Yonas-Xin/LithoSpectra-Studio/releases/latest) 下载现成安装包。
+
+| 平台 | 安装包 | 要求 |
+| --- | --- | --- |
+| macOS | [1.0.0 · Apple Silicon DMG](https://github.com/Yonas-Xin/LithoSpectra-Studio/releases/download/v1.0.0/LithoSpectra-Studio-1.0.0-macos-arm64.dmg) | macOS 12+，Apple Silicon |
+| Windows | [1.0.0 · 64 位 ZIP](https://github.com/Yonas-Xin/LithoSpectra-Studio/releases/download/v1.0.0/LithoSpectra-Studio-1.0.0-windows-x64.zip) | Windows 10 / 11，Edge WebView2 Runtime |
+
+macOS 将 `.app` 拖到“应用程序”后运行；Windows 完整解压后双击 `LithoSpectraWeb.exe`，保留同级的 `lib` 与 `resources` 文件夹。安装包的构建日期、功能限制与 SHA-256 校验文件见 [发行说明](https://github.com/Yonas-Xin/LithoSpectra-Studio/releases/tag/v1.0.0)。
+
 ## 功能
 
 - **地质样本库**：使用 GeoPackage 保存点、面样本与多级分类，支持 Shapefile、GeoJSON 等格式导入导出，以及撤销、备份和按类别裁剪样本集。
