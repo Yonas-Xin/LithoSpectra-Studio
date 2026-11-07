@@ -1,0 +1,20 @@
+# 岩谱深度学习 Worker 的运行环境（macOS 与 Windows 通用）。
+#
+#   conda env create -f environment.yml
+#
+# Windows 有 NVIDIA 显卡时，创建后按 https://pytorch.org 的说明改装 CUDA 版 PyTorch，
+# 例如：pip install torch --index-url https://download.pytorch.org/whl/cu124
+# macOS（Apple 芯片）直接使用本文件即可，MPS 自动可用。
+#
+# 已安装 numpy、PyTorch、h5py 与 GDAL 的环境（如 geo）无需新建，在岩谱中直接选用即可。
+name: litho-dl
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy
+  - gdal
+  - h5py
+  - pip
+  - pip:
+      - torch

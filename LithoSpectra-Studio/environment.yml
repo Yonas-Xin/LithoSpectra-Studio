@@ -1,0 +1,39 @@
+# AircasGXT 样本库运行环境
+#   conda env create -f environment.yml
+#   conda activate samplelib
+#   bash packaging/build_web_macos.sh      # 编译出 packaging/dist-web/LithoSpectraWeb.app
+name: samplelib
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - gdal>=3.8      # 矢量/影像读写、坐标变换、GeoPackage 驱动
+  # JPEG2000 驱动。conda-forge 从 3.9 起把它拆成独立的插件包，不装就读不了
+  # Sentinel-2 的 .jp2；打包时 spec 会把插件一并带进产物。
+  - libgdal-jp2openjpeg
+  - numpy>=1.24    # 影像底图拉伸
+  # 数学库用 OpenBLAS。conda-forge 在 Windows 上默认给 numpy 配 Intel MKL，
+  # 打包后多出几百兆，本程序用不上它的那点加速
+  - libblas=*=*openblas
+  - pillow>=10.0   # 影像底图渲染为画布位图
+  - h5py>=3.8      # 裁剪样本块的 h5 输出（单文件样本集）；缺它时只能输出 bin/tif
+  # 光谱曲线出图。装 matplotlib-base 而不是 matplotlib：后者会连 Qt / Tk 的后端
+  # 一起拉进来，本程序只用 Agg 出图，多出来的那些只占体积。
+  - matplotlib-base>=3.8
+  - pip
+  - pip:
+      # 打包成 app 才需要
+      - pyinstaller>=6.0
+      # 进程内 HTTP 接口 + 系统 WebView 窗口
+      - fastapi>=0.110
+      - uvicorn>=0.29
+      - pywebview>=5.0
+      # pywebview 在 Windows 上经它调 .NET 的 WinForms 与 Edge WebView2
+      - pythonnet>=3.0 ; sys_platform == "win32"
+      # 野外记录模块：写照片 EXIF、LaMa 修补（ONNX）、兜底修补、macOS 文字识别。
+      # 不装野外记录模块（basic / analysis 版）的话这几个都不用装。
+      - piexif>=1.1
+      - onnxruntime>=1.18
+      - sherpa-onnx>=1.12        # 野外记录：录音转文字（SenseVoice 离线识别）
+      - opencv-python-headless>=4.9
+      - ocrmac>=1.0 ; sys_platform == "darwin"

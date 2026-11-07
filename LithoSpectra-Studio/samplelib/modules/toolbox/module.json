@@ -1,0 +1,8 @@
+{
+  "id": "toolbox",
+  "name": "预处理工具箱",
+  "version": "1.0.0",
+  "summary": "去水汽波段、Sentinel-2 组合、深度去噪等批处理工具",
+  "requires": [],
+  "data": []
+}

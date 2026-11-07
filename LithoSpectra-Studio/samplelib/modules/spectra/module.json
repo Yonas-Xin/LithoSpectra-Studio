@@ -1,0 +1,11 @@
+{
+  "id": "spectra",
+  "name": "光谱曲线与光谱库",
+  "version": "1.0.0",
+  "summary": "画布上取谱、论文样式出图、光谱库检索与匹配、按类别取平均谱",
+  "requires": [],
+  "data": [
+    "modules/spectra/data/spectral_features.json",
+    "modules/spectra/data/spectral_library.slb"
+  ]
+}

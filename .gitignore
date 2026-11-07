@@ -1,0 +1,92 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+build/
+dist/
+build-win64/
+dist-win64/
+build-web/
+dist-web/
+
+# ---- 虚拟环境 ----
+.venv/
+venv/
+env/
+
+# ---- macOS / Windows ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- IDE / 助手本地设置 ----
+.idea/
+*.swp
+.claude/
+
+# ---- 大体量栅格 / 中间产物（如需入库请删除对应行）----
+*.tif
+*.tiff
+*.img
+*.pix
+*.bsq
+*.bil
+*.bip
+output/
+outputs/
+results/
+logs/
+*.log
+
+# ---- 模型权重 ----
+*.pth
+*.pt
+*.ckpt
+*.h5
+
+# ---- 样本库（本地数据，不入库）----
+SampleLibrary/
+
+# ---- 样本库运行时数据（可由 run_sample_library.py 自动重建）----
+LithoSpectra-Studio/data/
+LithoSpectra-Studio/state/
+# 源码运行时 app_data_dir() 就是项目目录，这份是使用者自己改的定义
+LithoSpectra-Studio/spectral_features.json
+# 个人光谱库，使用者自己存进去的谱，不入库
+LithoSpectra-Studio/my_spectra.slb
+
+# ---- 光谱库源数据（ENVI 原始 .sli/.hdr，63 MB，可由 ENVI 安装目录复制）----
+# 编译产物 samplelib/modules/spectra/data/spectral_library.slb 才是随包发布的那份
+光谱库/
+
+# ---- 岩性图例库的源数据缓存（可由 tools/build_legend_library.py 重新下载）----
+LithoSpectra-Studio/tools/_legend_cache/
+
+# ---- 底图服务密钥（每台机器各填各的，绝不入库）----
+LithoSpectra-Studio/keys.json
+
+# Public repository: local credentials, data and generated files
+keys.json
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.gpkg
+*.gpkg-*
+*.media/
+*.slb
+!LithoSpectra-Studio/samplelib/modules/spectra/data/spectral_library.slb
+node_modules/
+*.tsbuildinfo
+*.onnx
+*.dmg
+*.exe
+*.app/
+.claude/
+.codex/
+LithoSpectra-Studio/packaging/open-source/
+LithoSpectra-Studio/assets/fonts/esri_north.ttf

@@ -1,0 +1,5 @@
+{
+  "edition": "full",
+  "display_name": "岩谱 LithoSpectra · 全功能版",
+  "modules": ["basemap", "spectra", "clip", "toolbox", "fieldwork", "deeplearn"]
+}

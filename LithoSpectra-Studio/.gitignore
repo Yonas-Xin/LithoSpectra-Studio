@@ -1,0 +1,61 @@
+# Local credentials
+keys.json
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+
+# Personal data and runtime state
+/data/
+/state/
+/userdata/
+/my_spectra.slb
+/spectral_features.json
+*.gpkg
+*.gpkg-*
+*.media/
+*.slb
+!samplelib/modules/spectra/data/spectral_library.slb
+
+# Generated artifacts and dependencies
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+node_modules/
+dist/
+build/
+build-web/
+dist-web/
+build-win64/
+dist-win64/
+/packaging/open-source/
+/tools/_legend_cache/
+*.tsbuildinfo
+*.log
+*.dmg
+*.exe
+*.app/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# Proprietary font; the renderer has a built-in fallback
+/assets/fonts/esri_north.ttf
+
+# Local editor and OS state
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+.claude/
+.codex/
+*.swp

@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "models": {
+    "qrnn3d_blind_gaussian": {
+      "architecture": "qrnn3d",
+      "filename": "hyde-bs16-blindSNR-gaussian-qrnn3d-l2.pth",
+      "sha256": "e49cc46cfd31baf546f1e9179ad9e0a7ba677bea80de1ed0558e176ab374200e",
+      "training_noise": "blind-SNR Gaussian"
+    },
+    "qrnn3d_mixed": {
+      "architecture": "qrnn3d",
+      "filename": "qrnn3d_mixed_trained_epoch_100_159904.pth",
+      "sha256": "355fb9b97acf6df5b6018efcef9dc8a908b865f2fc5314145be2f24f7afef64a",
+      "training_noise": "mixed synthetic noise"
+    }
+  }
+}

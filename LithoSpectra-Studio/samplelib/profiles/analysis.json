@@ -1,0 +1,5 @@
+{
+  "edition": "analysis",
+  "display_name": "岩谱 LithoSpectra · 分析版",
+  "modules": ["basemap", "spectra"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "deeplearn",
+  "name": "深度学习",
+  "version": "0.1.0",
+  "summary": "监督分类与对比学习：样本集登记、训练监控、模型库、整景预测实时上图；计算在外部 Python 环境的 Worker 里跑",
+  "requires": [],
+  "data": []
+}
